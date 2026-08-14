@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 
 @Component({
   selector: 'app-login',
@@ -7,6 +7,17 @@ import { Component } from '@angular/core';
   styleUrl: './login.css',
 })
 export class Login {
-  title = "Login Page";
-  
+  imageUrl ="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdMvYUKSyvlfGcuZDpDQCTKON9JBbkdOhhYnbGGj22sQ&s";
+  isDisabled = true; 
+  username = "shahroz";
+  isActive =true;
+  boxWidth = 100;
+  bgColor = "red";
+  count =signal(0);
+
+  incr(){
+    this.count.update((value)=> value + 2)
+  }
+
+
 }

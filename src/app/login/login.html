@@ -1,2 +1,15 @@
 <p>login works!</p>
-<h1>{{title}}</h1>
+
+<img [src]="imageUrl" alt="image" />
+
+<button [disabled]="isDisabled">Submit</button>
+
+<input [value]="username" />
+
+<div [class.active]="isActive"> Status</div>
+
+<div [style.width.px]="boxWidth" [style.backgroundColor]="bgColor">Style</div>
+
+<!-- <p [innerText]="'count:' + count() " ></p> -->
+
+<button (click)="incr()">Count: {{ count() }}</button>
