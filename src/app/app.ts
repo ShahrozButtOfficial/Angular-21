@@ -1,11 +1,12 @@
 import { Component, signal } from '@angular/core';
 import { Login } from './login/login';
 import { Signin } from './signin/signin';
+import { Events } from './events/events';
 
 
 @Component({
   selector: 'app-root',
-  imports: [Login, Signin],
+  imports: [Login, Signin, Events],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
