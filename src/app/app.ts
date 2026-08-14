@@ -8,5 +8,16 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('angular-tutorial');
+  name = "Angular Tutorial";
+  // isAdmin= true;
+  isAdmin= false;
+  count = 5;
+  price = 199.99;
+  isLogin = true;
+
+  Title = signal('angular-tutorial signal');
+
+  getUser(){
+    return "Shahroz";
+  }
 }
