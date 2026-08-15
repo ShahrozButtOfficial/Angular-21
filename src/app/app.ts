@@ -1,26 +1,50 @@
 import { Component, signal } from '@angular/core';
-import { Login } from './login/login';
-import { Signin } from './signin/signin';
-import { Events } from './events/events';
+
 
 
 @Component({
   selector: 'app-root',
-  imports: [Login, Signin, Events],
+  imports: [],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  // styleUrl: './app.css'
+  styles:[`
+    .hover-box {
+      width: 200px;
+      color: green;
+      background-color: lightgray;
+      text-align: center;
+      padding: 10px;
+      margin: 10px;
+    }`]
 })
 export class App {
-  name = "Angular Tutorial";
-  // isAdmin= true;
-  isAdmin= false;
-  count = 5;
-  price = 199.99;
-  isLogin = true;
+  handleClick() {
+    alert('Button clicked!');
+  }
 
-  Title = signal('angular-tutorial signal');
+  onTyping(event: any) {
+    console.log("Typed", event.target.vaue)
+  }
 
-  getUser(){
-    return "Shahroz";
+  onKeyUp(event: any) {
+    console.log("Key Up", event.key)
+  }
+
+
+  onHover(){
+    console.log("Mouse Hovered")
+  }
+
+  onLeave(){
+    console.log("Mouse Left")
+  }
+
+
+  onBlur(){
+    console.log("blur event")
+  }
+
+  onFocus(){
+    console.log("focus event")
   }
 }

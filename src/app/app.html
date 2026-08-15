@@ -1,22 +1,6 @@
-<h1>Hello World</h1>
+<button (click)="handleClick()">Click Me</button>
+<input (input)="onTyping($event)" placeholder="Type here"  (focus)="onFocus()"/>
+<input (keyup)="onKeyUp($event)" (blur)="onBlur()"/>
 
+<div (mouseover)="onHover()"  (mouseleave)="onLeave()" class="hover-box">Text</div>
 
-<!-- Expresson -->
-<p>{{name}}</p>
-<p>{{10+5}}</p>
-<p>{{name.toUpperCase()}}</p>
-<p>{{isAdmin ? "Welcome Admin" : "Welcome User"}}</p>
-
-<p>{{count}}, {{price}}, {{isLogin}}</p>
-
-<p>{{getUser()}}</p>
-
-
-<h1>{{Title()}}</h1>
-
-
-<app-login></app-login>
-
-<app-signin></app-signin>
-
-<app-events></app-events>
