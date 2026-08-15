@@ -1,55 +1,26 @@
-@switch (value) {
-    @case ('home') {
-        <p>Home page</p>
-    }
-    @case ('about') {
-        <p>About page</p>
-    }
-    @case ('contact') {
-        <p>Contact page</p>
-    }
-    @default {
-        <p>Page not Found</p>
-    }
-}
+<!-- @for (item of items; track $index) {
+    <p>{{$index}},{{item}}</p>
+} -->
 
-<button (click)="tab='home'">Home</button>
-<button (click)="tab='about'">About</button>
-<button (click)="tab='contact'">Contact</button>
+<!-- @for (item of users; track $index) {
+    <div>
+        <h4>{{item.name}}</h4>
+        <p>{{item.age}}</p>
+    </div>
+} -->
 
-@switch (tab) {
-    @case ('home') {
-        
-            <h1>Home Page</h1>
-            <p>Welcome to the Home Page!</p>
-    }
-    @case ('about') {
-    
-            <h1>About Page</h1>
-            <p>This is the About Page.</p>
-        
-    }@case ('contact') {
-        
-            <h1>Contact Page</h1>
-            <p>This is the Contact Page.</p>
-        
-    }
-}
+<!-- @for (item of items; track $index) {
+    <p>{{item}}</p>
+    <button (click)="onDelete($index)">Delete</button>
+} -->
+
+<!-- @for (item of numbers; track $index) {
+    <p>{{evenOdd(item)}}, {{item}}</p>
+} -->
 
 
-<input (input)="updateCat($event.target.value)" placeholder="Enter category" />
-
-@switch (categories) {
-    @case ('fruit') {
-        <p>Fruit Category</p>
-    }
-    @case ('veg') {
-        <p>Vegetarian</p>
-    }
-    @case ('non-veg') {
-        <p>Non-Vegetarian</p>
-    }
-    @default {
-        <p>Not found</p>
-    }
-}
+<div class="container">
+    <h1>Even Odd Guesser</h1>
+    <input (input)="onInput($event.target.value)" placeholder="Enter a number" /><p>{{result}}</p>
+    <button (click)="evenOdd(num)" class="btns">Guess</button>
+</div>
