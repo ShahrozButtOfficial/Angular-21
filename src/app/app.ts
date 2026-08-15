@@ -8,20 +8,15 @@ import { Component, signal } from '@angular/core';
   styleUrl: './app.css'
 })
 export class App {
-  isLoggedIn = false;
+  // status:string ="xyz";
 
+  marks: number = 70;
 
-  marks=85;
- 
+  age: number = 0;
 
-  showBox=true;
-
-  toggleBox(){
-    this.showBox=!this.showBox;
+  updateAge(value: string){
+    this.age = parseInt(value);
   }
 
-  age = 0;
-  updateAge(value: string) {
-    this.age = parseInt(value, 10);
-  }
+  section = "home"
 }

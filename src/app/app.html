@@ -1,26 +1,50 @@
-<!-- @if (isLoggedIn) {
-    <h1>Welcome Shahroz</h1>
+<!-- @if (status === 'pending') {
+    <p>Order Pending</p>
+}@else if (status === 'processing') {
+    <p>Order Processing</p>
+}@else if (status === "shipped") {
+    <p>Order Shipped</p>
 }@else {
-    <h2>Please Login</h2>
+    <p>Unknown status</p>
 } -->
 
-<!-- @if (marks >= 50) {
-    <p>Pass</p>
+<!-- @if (marks >= 90) {
+    <p>Grade A+</p>
+}@else if (marks >=75) {
+    <p>Grade A</p>
+}@else if (marks >= 60) {
+    <p>Grade B</p>
+}@else if (marks >= 50) {
+    <p>Grade C</p>
 }@else {
     <p>Fail</p>
 } -->
-
 <!-- 
-<button (click)="toggleBox()">Toggle</button>
-@if(showBox) {
-    <div >
-        This is a box
-    </div>
-} -->
 
 <input (input)="updateAge($event.target.value)" placeholder="Enter your age" />
-@if(age >=18){
+
+@if (age>=60) {
+    <p>Senior Citizen</p>
+}@else if (age >=18) {
     <p>Adult</p>
-}@else{
-    <p>Minor</p>
+}@else if (age >=13) {
+    <p>Teenager</p>
+}@else if (age >=0) {
+    <p>Child</p>
+}@else {
+    <p>Invalid age</p>
+} -->
+
+<button (click)="section='home'">Home</button>
+<button (click)="section='profile'">Profile</button>
+<button (click)="section='settings'">Settings</button>
+
+@if (section==='home') {
+    <p>Welcome to the Home Page</p>
+}@else if (section === "profile") {
+    <p>Welcome to the Profile Page</p>
+}@else if (section === "settings") {
+    <p>Welcome to the Settings Page</p>
+}@else {
+    <p>Unknown section</p>
 }
