@@ -70,19 +70,20 @@ export class App {
   // }
 
   // numbers =[10,30,1,0,15,9]
-  num: number = 0;
-  result:string = '';
-  evenOdd(num: number){
-    if(num %2 ===0){
-      this.result= 'Even';
-    }else{
-      this.result= 'Odd';
-    }
-  }
+  // num: number = 0;
+  // result:string = '';
+  // evenOdd(num: number){
+  //   if(num %2 ===0){
+  //     this.result= 'Even';
+  //   }else{
+  //     this.result= 'Odd';
+  //   }
+  // }
 
-  onInput(number: string){
-    this.num = parseInt(number);
-  }
+  // onInput(number: string){
+  //   this.num = parseInt(number);
+  // }
 
+  // items = ['Apple', 'Banana','', 'Mango', 'Orange', 'Grapes','']
 
 }
