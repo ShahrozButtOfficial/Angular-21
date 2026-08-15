@@ -1,50 +1,55 @@
-<!-- @if (status === 'pending') {
-    <p>Order Pending</p>
-}@else if (status === 'processing') {
-    <p>Order Processing</p>
-}@else if (status === "shipped") {
-    <p>Order Shipped</p>
-}@else {
-    <p>Unknown status</p>
-} -->
+@switch (value) {
+    @case ('home') {
+        <p>Home page</p>
+    }
+    @case ('about') {
+        <p>About page</p>
+    }
+    @case ('contact') {
+        <p>Contact page</p>
+    }
+    @default {
+        <p>Page not Found</p>
+    }
+}
 
-<!-- @if (marks >= 90) {
-    <p>Grade A+</p>
-}@else if (marks >=75) {
-    <p>Grade A</p>
-}@else if (marks >= 60) {
-    <p>Grade B</p>
-}@else if (marks >= 50) {
-    <p>Grade C</p>
-}@else {
-    <p>Fail</p>
-} -->
-<!-- 
+<button (click)="tab='home'">Home</button>
+<button (click)="tab='about'">About</button>
+<button (click)="tab='contact'">Contact</button>
 
-<input (input)="updateAge($event.target.value)" placeholder="Enter your age" />
+@switch (tab) {
+    @case ('home') {
+        
+            <h1>Home Page</h1>
+            <p>Welcome to the Home Page!</p>
+    }
+    @case ('about') {
+    
+            <h1>About Page</h1>
+            <p>This is the About Page.</p>
+        
+    }@case ('contact') {
+        
+            <h1>Contact Page</h1>
+            <p>This is the Contact Page.</p>
+        
+    }
+}
 
-@if (age>=60) {
-    <p>Senior Citizen</p>
-}@else if (age >=18) {
-    <p>Adult</p>
-}@else if (age >=13) {
-    <p>Teenager</p>
-}@else if (age >=0) {
-    <p>Child</p>
-}@else {
-    <p>Invalid age</p>
-} -->
 
-<button (click)="section='home'">Home</button>
-<button (click)="section='profile'">Profile</button>
-<button (click)="section='settings'">Settings</button>
+<input (input)="updateCat($event.target.value)" placeholder="Enter category" />
 
-@if (section==='home') {
-    <p>Welcome to the Home Page</p>
-}@else if (section === "profile") {
-    <p>Welcome to the Profile Page</p>
-}@else if (section === "settings") {
-    <p>Welcome to the Settings Page</p>
-}@else {
-    <p>Unknown section</p>
+@switch (categories) {
+    @case ('fruit') {
+        <p>Fruit Category</p>
+    }
+    @case ('veg') {
+        <p>Vegetarian</p>
+    }
+    @case ('non-veg') {
+        <p>Non-Vegetarian</p>
+    }
+    @default {
+        <p>Not found</p>
+    }
 }

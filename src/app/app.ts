@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal  } from '@angular/core';
 
 
 @Component({
@@ -8,15 +8,11 @@ import { Component, signal } from '@angular/core';
   styleUrl: './app.css'
 })
 export class App {
-  // status:string ="xyz";
+  value: string ="home";
+  tab: string = "home";
 
-  marks: number = 70;
-
-  age: number = 0;
-
-  updateAge(value: string){
-    this.age = parseInt(value);
+  categories = '';
+  updateCat(value: string) {
+    this.categories = value.toLowerCase();
   }
-
-  section = "home"
 }
