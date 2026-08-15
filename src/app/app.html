@@ -1,3 +1,26 @@
-<div class="hero-box">
-    Welcome Shahroz
-</div> 
+<!-- @if (isLoggedIn) {
+    <h1>Welcome Shahroz</h1>
+}@else {
+    <h2>Please Login</h2>
+} -->
+
+<!-- @if (marks >= 50) {
+    <p>Pass</p>
+}@else {
+    <p>Fail</p>
+} -->
+
+<!-- 
+<button (click)="toggleBox()">Toggle</button>
+@if(showBox) {
+    <div >
+        This is a box
+    </div>
+} -->
+
+<input (input)="updateAge($event.target.value)" placeholder="Enter your age" />
+@if(age >=18){
+    <p>Adult</p>
+}@else{
+    <p>Minor</p>
+}
