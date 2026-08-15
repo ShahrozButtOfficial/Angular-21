@@ -1,26 +1,37 @@
 import { Component, signal } from '@angular/core';
-import { Login } from './login/login';
-import { Signin } from './signin/signin';
-import { Events } from './events/events';
+
 
 
 @Component({
   selector: 'app-root',
-  imports: [Login, Signin, Events],
+  imports: [],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
-  count = 0;
+  // value = 10;
 
-  handleClick(){
-    console.log('Button clicked');
-    this.hello();
+  // value = 'shahroz';
+
+//Data Typed | Properties
+  name : string | number = 'shahroz'; // Union Type
+  age: number = 10;
+  isValid: boolean = true;
+  Any: any;
+  Undefined: undefined;
+  Unknown: unknown;
+
+
+  handleClick() {
+    let value;
+    value = 'shahroz';
+    value =10;
+    console.log(value);
   }
 
-  hello(){
-    console.log('Hello World');
-  }
 
+  sum(a: number, b: number){
+    console.log(a + b);
+  }
 }
 
