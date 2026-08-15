@@ -11,16 +11,16 @@ import { Events } from './events/events';
   styleUrl: './app.css'
 })
 export class App {
-  name = "Angular Tutorial";
-  // isAdmin= true;
-  isAdmin= false;
-  count = 5;
-  price = 199.99;
-  isLogin = true;
+  count = 0;
 
-  Title = signal('angular-tutorial signal');
-
-  getUser(){
-    return "Shahroz";
+  handleClick(){
+    console.log('Button clicked');
+    this.hello();
   }
+
+  hello(){
+    console.log('Hello World');
+  }
+
 }
+
