@@ -1,39 +1,10 @@
-<!-- <h1>{{count()}}</h1>
+<h2>Parent Comp</h2>
+<!-- <app-child [name]="username"></app-child> -->
 
-@if(isLoggedIn()){
-    <h3>Welcome Shahroz</h3>
-}@else{
-    <h3>Welcome user</h3>
-}
+<!-- <app-child (notify)="onMessage($event)"></app-child>
 
-<button (click)="isLoggedIn.update(value => !value)">toggle</button>
+<p>Message: {{message}}</p> -->
 
 
-
-<ul>
-    @for(item of items(); track $index){
-        <li>{{item}}</li>
-    }
-</ul>
-
-<button (click)="addItem()">Add Item</button> -->
-
-
-<h1>User Dashbord</h1>
-<button (click)="makeUser()">User</button>
-<button (click)="makeAdmin()">Admin</button>
-
-@if(role() === 'admin'){
-    <p>Welcome admin</p>
-}@else{
-    <p>Welcome user</p>
-}
-
-<h3>Available Features</h3>
-<ul>
-    @for(feature of features(); track $index){
-        <li>
-            {{feature}}
-        </li>
-    }
-</ul>
+<app-child #child></app-child>
+<P>Message from child: {{child.message()}}</P>

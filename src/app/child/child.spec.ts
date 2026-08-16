@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TodoApp } from './todo-app';
+import { Child } from './child';
 
-describe('TodoApp', () => {
-  let component: TodoApp;
-  let fixture: ComponentFixture<TodoApp>;
+describe('Child', () => {
+  let component: Child;
+  let fixture: ComponentFixture<Child>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TodoApp],
+      imports: [Child],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(TodoApp);
+    fixture = TestBed.createComponent(Child);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });
