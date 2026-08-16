@@ -1,0 +1,22 @@
+input{
+    padding: 6px;
+    width: 200px;
+}
+
+button{
+    padding: 6px 12px;
+    width: 100px;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+li{
+    list-style: none;
+    padding: 5px;
+    margin: 5px;
+    background-color: rgb(130, 116, 116);
+    color: white;
+}
+
