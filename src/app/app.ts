@@ -1,4 +1,4 @@
-import { Component, signal, computed  } from '@angular/core';
+import { Component, signal, computed ,effect } from '@angular/core';
 
 interface User {
   name: string;
@@ -14,26 +14,54 @@ interface User {
   
 })
 export class App {
-  // counter = signal<number>(2);
+  // count = signal<number>(0);
 
-  // doubleCount = computed<number>(() => this.counter() * 2);
-  // tripleCount = computed<number>(() => this.counter() * 3);
-
+  // constructor() {
+  //   effect(()=>{
+  //     console.log(`Count is ${this.count()}`);
+  //   })
+  // }
 
   // increment() {
-  //   this.counter.update((value) => value + 1);
+  //   this.count.update((c) => c + 1);
   // }
 
 
-  // firstName = signal<string>('Shahroz');  
-  // lastName =signal<string>('Butt');
+  // isDarkMode = signal<boolean>(false);
 
-  // fullName = computed<string>(()=> `${this.firstName()} ${this.lastName()}`);
+  // constructor() {
+  //   effect(()=>{
+  //     if(this.isDarkMode()) {
+  //       document.body.style.backgroundColor = 'black';
+  //       document.body.style.color = 'white';
+  //     }else{
+  //       document.body.style.backgroundColor = 'white';
+  //       document.body.style.color = 'black';
+  //     }
+  //   });
+  // }
+
+  // toggleButton(){
+  //   this.isDarkMode.update((mode) => !mode);
+  // }
 
 
-  price = signal<number[]>([10,13,1500]);
+  message = signal<string>('Hello, Angular Signals!');
+  constructor() {
+    effect(()=>{
+      if(this.message()) {
+        setTimeout(() => {
+          this.message.set('');
+        }, 3000);
+      }
+    });
+    
+  }
 
-  total = computed<number>(()=> this.price().reduce((acc, curr) => acc + curr, 0));
+  showMessage() {
+    this.message.set('Hello, Angular Signals!');
+  }
+
 
 }
 
