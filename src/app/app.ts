@@ -1,11 +1,4 @@
-import { Component, signal } from '@angular/core';
-
-
-interface User {
-  name: string;
-  age: number;
-}
-
+import { Component, signal, computed ,effect} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -15,11 +8,17 @@ interface User {
   
 })
 export class App {
-  count = signal<number>(0);
-  name = signal<string>('Angular');
+  counter = signal<number>(2);
+  doubleCount = computed(()=> this.counter() * 2);
 
-  setCount(){
-    this.count.set(2);
+  constructor() {
+    effect(() => {
+      console.log(`Double value: ${this.doubleCount()}`);
+    });
+  }
+
+  increment() {
+    this.counter.update((value) => value + 1);
   }
 }
 
