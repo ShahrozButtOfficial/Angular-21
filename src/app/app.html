@@ -1,24 +1,6 @@
-<!-- <h1>{{lName | uppercase }}</h1>
-<h1>{{uName | lowercase }}</h1> -->
+<!-- <h1>{{fullName | pipeShortName}}</h1> -->
 
+<h2>{{USD | currency}}</h2>
+<h2>{{USD | convert:usdToPkrRate |currency:"INR"}}</h2>
 
-<!-- <p>Short Date: {{today | date: 'short'}}</p>
-<p>Full Date: {{today | date: 'fullDate'}}</p>
-
-<p>Custom Date: {{today | date: 'dd/MM/yyyy'}}</p> -->
-
-
-<!-- 
-<p>Amount: {{amount | currency}}</p>
-<p>Amount: {{amount | currency:"RS"}}</p>
-<p>Amount: {{amount | currency:"INR"}}</p>
-<p>Amount: {{amount | currency:"USD"}}</p>
-<p>Amount: {{amount | currency: "EUR"}}</p>
-
-<p>Custom: {{amount | currency: "INR":"symbol":"1.0-0"}}</p> -->
-
-
-
-<!-- <p>{{per | percent}}</p> -->
-
-<p>{{user | json}}</p>
+<h2>{{usdToPkrRate}}</h2> 

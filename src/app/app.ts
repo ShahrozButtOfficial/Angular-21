@@ -1,5 +1,7 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { PipeShortNamePipe } from './pipe/pipe-short-name-pipe';
+import { ConvertPipe } from './pipe/convert-pipe';
+import { CommonModule } from '@angular/common';
 
 interface User {
   name: string;
@@ -9,26 +11,17 @@ interface User {
 
 @Component({
   selector: 'app-root',
-  imports: [CommonModule],
+  imports: [PipeShortNamePipe, ConvertPipe, CommonModule],
   templateUrl: './app.html',
   styleUrl: './app.css'
   
 })
 export class App {
-//   lName = "shahroz";
-//   uName = "SHAHROZ";
-//
-
-  // today = new Date();
-
-  // 
+  // fullName: string = 'Shahroz Butt';
   
 
-
-  user={
-    name: 'shahroz',
-    age: 20
-  }
+  USD = 1500;
+  usdToPkrRate = 280;
 }
 
 
