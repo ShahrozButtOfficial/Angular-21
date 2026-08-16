@@ -1,40 +1,38 @@
 <!-- @for (item of items; track $index) {
-    <p>{{$index}},{{item}}</p>
-} -->
-
-<!-- @for (item of users; track $index) {
-    <div>
-        <h4>{{item.name}}</h4>
-        <p>{{item.age}}</p>
-    </div>
+    <p>{{$index+1}} -> {{item}}</p>
+     <p>Total Count: {{$count}}</p>
 } -->
 
 <!-- @for (item of items; track $index) {
-    <p>{{item}}</p>
-    <button (click)="onDelete($index)">Delete</button>
-} -->
-
-<!-- @for (item of numbers; track $index) {
-    <p>{{evenOdd(item)}}, {{item}}</p>
-} -->
-
-
-<!-- <div class="container">
-    <h1>Even Odd Guesser</h1>
-    <input (input)="onInput($event.target.value)" placeholder="Enter a number" /><p>{{result}}</p>
-    <button (click)="evenOdd(num)" class="btns">Guess</button>
-</div> -->
-
-<!-- @for (item of items; track $index) {
-    
-    <!-- <p>{{item}}, {{$index}}</p> -->
-
-    @switch (item) {
-        @case ('') {
-            
-        }
-        @default {
-            <p>{{item}}, {{$index}}</p>
-        }
+    @if($first){
+        <p>First Element: {{item}}</p>
+    }@else if ($last) {
+        <p>Last Element: {{item}}</p>
     }
+} -->
+
+<!-- @for (item of items; track $index) {
+    <p [style.background]=" $odd ? 'LightGray' : 'yellow'">
+        {{item}}, -- {{$index}}
+    </p>
+
+    <p [style.background]=" $even ? 'LightGray' : 'yellow'">
+        {{item}}, -- {{$index}}
+    </p>
+} -->
+
+
+
+<!-- @for (num of num; track $index) {
+    <div>
+        <strong>{{num}}</strong>
+
+        <span>| Index; {{$index}}</span>
+        <span>| Even: {{$even}}</span>
+        <span>| Odd: {{$odd}}</span>
+        <span>| First: {{$first}}</span>
+        <span>| Last: {{$last}}</span>
+        <span>| Total: {{$count}}</span>
+
+    </div>
 } -->
