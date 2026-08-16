@@ -1,3 +1,2 @@
-<input [(ngModel)]="username">
-
-<p>{{username}}</p>
+<input [value]="name()" (input)="name.set($event.target.value)" />
+<p>{{name()}}</p>

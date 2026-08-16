@@ -3,13 +3,13 @@ import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
-  imports: [FormsModule],
+  imports: [],
   templateUrl: './app.html',
   styleUrl: './app.css'
   
 })
 export class App {
-  username = 'Shahroz';
+  name = signal('Sharoz');
 }
 
 
