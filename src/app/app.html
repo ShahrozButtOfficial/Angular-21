@@ -1,6 +1,4 @@
-<!-- <h1>{{fullName | pipeShortName}}</h1> -->
+<h1>{{count()}}</h1>
+<h1>{{name()}}</h1>
 
-<h2>{{USD | currency}}</h2>
-<h2>{{USD | convert:usdToPkrRate |currency:"INR"}}</h2>
-
-<h2>{{usdToPkrRate}}</h2> 
+<button (click)="setCount()">Set Count</button>

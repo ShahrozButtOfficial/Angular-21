@@ -1,7 +1,5 @@
-import { Component } from '@angular/core';
-import { PipeShortNamePipe } from './pipe/pipe-short-name-pipe';
-import { ConvertPipe } from './pipe/convert-pipe';
-import { CommonModule } from '@angular/common';
+import { Component, signal } from '@angular/core';
+
 
 interface User {
   name: string;
@@ -11,17 +9,18 @@ interface User {
 
 @Component({
   selector: 'app-root',
-  imports: [PipeShortNamePipe, ConvertPipe, CommonModule],
+  imports: [],
   templateUrl: './app.html',
   styleUrl: './app.css'
   
 })
 export class App {
-  // fullName: string = 'Shahroz Butt';
-  
+  count = signal<number>(0);
+  name = signal<string>('Angular');
 
-  USD = 1500;
-  usdToPkrRate = 280;
+  setCount(){
+    this.count.set(2);
+  }
 }
 
 
