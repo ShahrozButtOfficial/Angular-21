@@ -1,4 +1,5 @@
-import { Component, signal, computed ,effect } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
 
 interface User {
   name: string;
@@ -8,61 +9,26 @@ interface User {
 
 @Component({
   selector: 'app-root',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './app.html',
   styleUrl: './app.css'
   
 })
 export class App {
-  // count = signal<number>(0);
+//   lName = "shahroz";
+//   uName = "SHAHROZ";
+//
 
-  // constructor() {
-  //   effect(()=>{
-  //     console.log(`Count is ${this.count()}`);
-  //   })
-  // }
+  // today = new Date();
 
-  // increment() {
-  //   this.count.update((c) => c + 1);
-  // }
+  // 
+  
 
 
-  // isDarkMode = signal<boolean>(false);
-
-  // constructor() {
-  //   effect(()=>{
-  //     if(this.isDarkMode()) {
-  //       document.body.style.backgroundColor = 'black';
-  //       document.body.style.color = 'white';
-  //     }else{
-  //       document.body.style.backgroundColor = 'white';
-  //       document.body.style.color = 'black';
-  //     }
-  //   });
-  // }
-
-  // toggleButton(){
-  //   this.isDarkMode.update((mode) => !mode);
-  // }
-
-
-  message = signal<string>('Hello, Angular Signals!');
-  constructor() {
-    effect(()=>{
-      if(this.message()) {
-        setTimeout(() => {
-          this.message.set('');
-        }, 3000);
-      }
-    });
-    
+  user={
+    name: 'shahroz',
+    age: 20
   }
-
-  showMessage() {
-    this.message.set('Hello, Angular Signals!');
-  }
-
-
 }
 
 
