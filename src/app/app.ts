@@ -9,8 +9,26 @@ import { Component, signal  } from '@angular/core';
   
 })
 export class App {
-  // items =['HTML', 'CSS', 'JavaScript', 'TypeScript', 'Angular'];
+  count = signal(0); //Signal Create
+  value = 20;
 
-  num = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  // count.update((value)=> value + 1); //Signal Update
+
+  // items.mutate((items) => a.push(4)); //Signal Update
+  // signals sunchronours
+
+  increment() {
+    this.count.update((value) => value + 1);
+  }
+
+  decrement(){
+    this.count.update((value) => value - 1);
+  }
+
+  reset(){
+    this.count.set(0)
+  }
+
+
 
 }

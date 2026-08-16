@@ -1,38 +1,15 @@
-<!-- @for (item of items; track $index) {
-    <p>{{$index+1}} -> {{item}}</p>
-     <p>Total Count: {{$count}}</p>
-} -->
+<h2>Signal</h2>
 
-<!-- @for (item of items; track $index) {
-    @if($first){
-        <p>First Element: {{item}}</p>
-    }@else if ($last) {
-        <p>Last Element: {{item}}</p>
-    }
-} -->
-
-<!-- @for (item of items; track $index) {
-    <p [style.background]=" $odd ? 'LightGray' : 'yellow'">
-        {{item}}, -- {{$index}}
-    </p>
-
-    <p [style.background]=" $even ? 'LightGray' : 'yellow'">
-        {{item}}, -- {{$index}}
-    </p>
-} -->
+<!-- <p>Value: {{value}}</p> -->
+<p>Count: {{count()}}</p> 
 
 
+<!-- <button (click)="count.set(15)">Change Signal</button> -->
 
-<!-- @for (num of num; track $index) {
-    <div>
-        <strong>{{num}}</strong>
+<!-- <button (click)="value++">Change Signal</button> -->
 
-        <span>| Index; {{$index}}</span>
-        <span>| Even: {{$even}}</span>
-        <span>| Odd: {{$odd}}</span>
-        <span>| First: {{$first}}</span>
-        <span>| Last: {{$last}}</span>
-        <span>| Total: {{$count}}</span>
 
-    </div>
-} -->
+<button (click)="increment()">+</button>
+<button (click)="decrement()">-</button>
+<button (click)="reset()">reset</button>
+
