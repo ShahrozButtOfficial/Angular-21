@@ -1,10 +1,21 @@
-<h2>Parent Comp</h2>
-<!-- <app-child [name]="username"></app-child> -->
+<!-- <h2>Counter App</h2>
 
-<!-- <app-child (notify)="onMessage($event)"></app-child>
+<p>Current Count: {{ counterStore.count() }}</p>
 
-<p>Message: {{message}}</p> -->
+<button (click)="counterStore.increment()">+</button>
+<button (click)="counterStore.decrement()">-</button>
+<button (click)="counterStore.reset()">reset</button> -->
 
 
-<app-child #child></app-child>
-<P>Message from child: {{child.message()}}</P>
+<h2>Application</h2>
+
+@if(userStore.user()){
+    <p>Welcome: {{userStore.user()!.name}}</p>
+    @if(userStore.isAdmin()){
+        <p>You are an Admin</p>
+    }
+
+    <button (click)="userStore.logout()">Logout</button>
+}@else{
+    <button (click)="userStore.login('Shahroz', 'admin')">Login As Admin</button>
+}

@@ -1,22 +1,21 @@
-import { Component, signal, computed ,effect} from '@angular/core';
-import { Child } from './child/child';
+import { Component, signal, computed, effect } from '@angular/core';
+import { CounterStore } from './core/store/counter';
+import { UserStore } from './core/store/user';
 
 @Component({
   selector: 'app-root',
-  imports: [Child],
+  imports: [],
   templateUrl: './app.html',
   styleUrl: './app.css'
-  
+
 })
 export class App {
-  // username: string = 'shahroz';
+  // constructor(public counterStore: CounterStore) {
 
-  message: string = '';
+  // }
+  ;
+  constructor(public userStore: UserStore) {
 
-  onMessage(msg: string) {
-    this.message = msg;
   }
 
 }
-
-
