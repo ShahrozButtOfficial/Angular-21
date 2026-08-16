@@ -1,4 +1,4 @@
-import { Component, signal  } from '@angular/core';
+import { Component, signal, computed  } from '@angular/core';
 
 interface User {
   name: string;
@@ -14,52 +14,26 @@ interface User {
   
 })
 export class App {
-  count = signal<number>(0);
+  // counter = signal<number>(2);
 
-  name = signal<string>('Shahroz');
-  isAdmin = signal<boolean>(true);
-
-  //array
-  numbers = signal<number[]>([1, 2, 3]);
-
-  //object
-  user = signal<{name: string,age: number}>({
-    name: 'shahroz',
-    age: 20
-  })
-
-  username = signal<User>({
-    name: 'shahroz',
-    age: 20
-  })
+  // doubleCount = computed<number>(() => this.counter() * 2);
+  // tripleCount = computed<number>(() => this.counter() * 3);
 
 
-  directUpdate() {
-    // this.count.set(this.count() + 1);
-    // this.count.set(20);
-
-    // this.numbers.set([100,200,300]);
-
-    // this.name.set('Ali');
+  // increment() {
+  //   this.counter.update((value) => value + 1);
+  // }
 
 
-    // this.username.set({
-    //   name: 'Ali',
-    //   age: 30
-    // })
+  // firstName = signal<string>('Shahroz');  
+  // lastName =signal<string>('Butt');
 
-  }
+  // fullName = computed<string>(()=> `${this.firstName()} ${this.lastName()}`);
 
 
-  addNumber() {
-    //this.numbers.update(arr => [...arr, 400]); //...spread operator is used to create a new array with the existing elements and the new element added at the end.
+  price = signal<number[]>([10,13,1500]);
 
-    this.username.update(user => ({
-      ...user, 
-      age: user.age + 1,
-      name: "Shahroz"
-    })); 
-  }
+  total = computed<number>(()=> this.price().reduce((acc, curr) => acc + curr, 0));
 
 }
 
