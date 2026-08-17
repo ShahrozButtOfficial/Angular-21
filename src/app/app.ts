@@ -1,21 +1,20 @@
 import { Component, signal, computed, effect } from '@angular/core';
-import { CounterStore } from './core/store/counter';
-import { UserStore } from './core/store/user';
+import { FormsModule } from '@angular/forms';
+
 
 @Component({
   selector: 'app-root',
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './app.html',
   styleUrl: './app.css'
 
 })
 export class App {
-  // constructor(public counterStore: CounterStore) {
+  name = signal('');
+  email = signal('');
 
-  // }
-  ;
-  constructor(public userStore: UserStore) {
 
+  submitForm() {
+    console.log('Form submitted:', this.name(), this.email());
   }
-
 }

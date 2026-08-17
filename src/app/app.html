@@ -1,21 +1,14 @@
-<!-- <h2>Counter App</h2>
+<h2>Template Driven Form Signal</h2>
+<input [(ngModel)]="name" (ngModelChange)="name.set($event)" placeholder="Enter Your Name" />
 
-<p>Current Count: {{ counterStore.count() }}</p>
+<br><br>
 
-<button (click)="counterStore.increment()">+</button>
-<button (click)="counterStore.decrement()">-</button>
-<button (click)="counterStore.reset()">reset</button> -->
+<input [(ngModel)]="email" (ngModelChange)="email.set($event)" placeholder="Enter Your Email" />
+
+<br><br>
+
+<button (click)="submitForm()">Submit</button>
 
 
-<h2>Application</h2>
-
-@if(userStore.user()){
-    <p>Welcome: {{userStore.user()!.name}}</p>
-    @if(userStore.isAdmin()){
-        <p>You are an Admin</p>
-    }
-
-    <button (click)="userStore.logout()">Logout</button>
-}@else{
-    <button (click)="userStore.login('Shahroz', 'admin')">Login As Admin</button>
-}
+<p>Name: {{name()}}</p>
+<p>Email: {{email()}}</p>
