@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 
 @Component({
   selector: 'app-form-fiel',
@@ -8,7 +8,13 @@ import { Component, input } from '@angular/core';
 })
 export class FormFiel {
   label = input<string>();
-  value = input<string>();
+  // value = input<string>();
+  valueChange = output<string>();
 
   type = input<string>('text');
+
+  onInput(val: string){
+    console.log("Child Value:" , val );
+    this.valueChange.emit(val);
+  }
 }

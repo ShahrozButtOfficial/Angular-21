@@ -1,1 +1,3 @@
-<app-form-fiel [label]="'Email'"  [value]="'test@gmail.com'" [type]="'email'"></app-form-fiel>
+<app-form-fiel [label]="'Email'" [type]="'email'" (valueChange)="onEmailChange($event)"></app-form-fiel>
+
+<p>{{email}}</p>

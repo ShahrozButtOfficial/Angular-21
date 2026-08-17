@@ -12,5 +12,10 @@ import { FormFiel } from "./form-fiel/form-fiel";
 
 })
 export class App {
-  
+ email = '';
+ 
+ onEmailChange(val: string){
+  console.log("Email: ", val);
+  this.email = val;
+ }
 }
