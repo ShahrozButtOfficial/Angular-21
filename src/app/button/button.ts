@@ -8,5 +8,10 @@ import { Component,input, output } from '@angular/core';
 })
 export class Button {
   label = input<string>();
-  clicked= output<void>();
+  clicked= output<string>();
+
+  onClicked(){
+    console.log("Card button Clicked (Child)");
+    this.clicked.emit("Button Clicked Successfully")
+  }
 }

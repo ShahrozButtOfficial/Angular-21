@@ -11,7 +11,14 @@ import { Button } from './button/button';
 
 })
 export class App {
-  saveData(){
-    console.log("Data Fetched")
+  // saveData(){
+  //   console.log("Data Fetched")
+  // }
+
+  message ="";
+  onSave(msg: string){
+    console.log(msg);
+    this.message = msg;
+    
   }
 }
