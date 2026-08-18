@@ -1,10 +1,10 @@
-<!-- <app-child></app-child> -->
+<h3>Login Form Based on Signal</h3>
 
-<h2>Lifecycle Methods</h2>
+<input type="email" placeholder="Enter Email" [field] ='loginForm.email'/>
+<input type="password" placeholder="Enter Password" [field] ='loginForm.password'/>
 
-<button (click)="changeTitle()">Change Input</button>
-<button (click)="toggle()">Toggle Component</button>
+<button (click)="submit()">Submit</button>
 
-@if(show()){
-    <app-child [title]="title()"></app-child>
-}
+<pre>
+    {{loginModel() | json}}
+</pre>
