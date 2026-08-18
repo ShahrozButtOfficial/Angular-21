@@ -1,6 +1,6 @@
 import { Component, inject, signal } from '@angular/core';
-import { UserService } from './user';
-import { toSignal } from '@angular/core/rxjs-interop';
+// import { UserService } from './user';
+// import { toSignal } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-root',
@@ -24,6 +24,6 @@ export class App {
   // }
 
 
-    userservice = inject(UserService);
-    users: any = toSignal(this.userservice.getUsers(), { initialValue: [] }); 
+    // userservice = inject(UserService);
+    // users: any = toSignal(this.userservice.getUsers(), { initialValue: [] }); 
 }
