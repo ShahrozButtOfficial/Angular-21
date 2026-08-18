@@ -1,16 +1,17 @@
 import { Routes } from '@angular/router';
-import { Homecomp } from './homecomp/homecomp';
-import { Aboutcomp } from './aboutcomp/aboutcomp';
-import { Contactcomp } from './contactcomp/contactcomp';
+import { Login } from './login/login';
+import { Dahboard } from './dahboard/dahboard';
+import { authGuard } from './auth-guard';
 
 
 
 export const routes: Routes = [
-    {path: '', component:Homecomp},
-    {path: 'about', component: Aboutcomp},
-    {path: 'contact', component: Contactcomp},
-
-
-    //Aways Last Wild Card route
-    {path: '**', loadComponent: () => import('./pagenotfound/pagenotfound').then(m => m.Pagenotfound)}
+    {path: 'login', component: Login},
+    {
+        path: 'dashboard',
+        component: Dahboard,
+        canActivate: [authGuard]
+    },
+    {path: '', redirectTo: 'login', pathMatch: 'full'},
+     
 ];
