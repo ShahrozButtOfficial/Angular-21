@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { RouterOutlet } from '@angular/router';
+import { Headercomp } from './headercomp/headercomp';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, RouterLink] ,
+  imports: [RouterOutlet, Headercomp] ,
   templateUrl: './app.html',
   styleUrl: './app.css'
 
