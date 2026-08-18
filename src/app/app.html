@@ -1,2 +1,10 @@
+<!-- <app-child></app-child> -->
 
-<router-outlet></router-outlet>
+<h2>Lifecycle Methods</h2>
+
+<button (click)="changeTitle()">Change Input</button>
+<button (click)="toggle()">Toggle Component</button>
+
+@if(show()){
+    <app-child [title]="title()"></app-child>
+}
