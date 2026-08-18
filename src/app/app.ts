@@ -1,5 +1,6 @@
 import { Component, inject, signal } from '@angular/core';
-// import { UserService } from './user';
+import { UserService } from './user-service';
+import { toSignal } from '@angular/core/rxjs-interop';
 // import { toSignal } from '@angular/core/rxjs-interop';
 
 @Component({
@@ -25,5 +26,9 @@ export class App {
 
 
     // userservice = inject(UserService);
-    // users: any = toSignal(this.userservice.getUsers(), { initialValue: [] }); 
+    // users: any = toSignal(this.userservice.getUsers(), { initialValue: [] });
+    
+    
+    userService = inject(UserService);
+    users:any = toSignal(this.userService.getUser(), { initialValue: [] });
 }
