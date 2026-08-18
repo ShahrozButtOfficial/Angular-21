@@ -1,15 +1,27 @@
 <!-- <button (click)="loadUsers()">Load Users</button> -->
 
-@if (users().length > 0) {
-  <h2>Users</h2>
 
-  <ul>
+<h2>User From JSON server</h2>
+
+<input type="text" placeholder="Name" [value]="name()" (input)="name.set($event.target.value)" />
+
+<input type="email" placeholder="Email" [value]="email()" (input)="email.set($event.target.value)" />
+
+<button (click)="submitForm()">Add User</button>
+
+<hr>
+
+
+@if (users().length > 0) {
+<h2>Users</h2>
+
+<ul>
     @for (user of users(); track user.id) {
-      <li>
+    <li>
         {{ user.name }} - {{ user.email }} - {{user.isActive}}
-      </li>
+    </li>
     }
-  </ul>
+</ul>
 } @else {
-  <p>No users loaded yet.</p>
+<p>No users loaded yet.</p>
 }

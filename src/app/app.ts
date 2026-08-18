@@ -25,10 +25,53 @@ export class App {
   // }
 
 
-    // userservice = inject(UserService);
-    // users: any = toSignal(this.userservice.getUsers(), { initialValue: [] });
-    
-    
-    userService = inject(UserService);
-    users:any = toSignal<User[]>(this.userService.getUser());
+  // userservice = inject(UserService);
+  // users: any = toSignal(this.userservice.getUsers(), { initialValue: [] });
+
+
+  // userService = inject(UserService);
+  // users:any = toSignal<User[]>(this.userService.getUser());
+
+  users = signal<User[]>([]);
+  name = signal<string>('');
+  email = signal<string>('');
+
+
+
+  constructor(private userService: UserService) { }
+
+  // ngOnInit(){
+  //     this.userService.getUser().subscribe((data) => {
+  //         this.users = data;
+  //     } );
+  // }
+
+  ngOnInit() {
+    this.loadUsers();
+  }
+
+
+  loadUsers() {
+    this.userService.getUser().subscribe((data) => {
+      this.users.set(data);
+    });
+  }
+
+
+  submitForm() {
+    const payload: User ={
+      name: this.name(),
+      email: this.email(),
+      isActive: false
+    };
+
+    this.userService.addUser(payload).subscribe((data) => {
+      this.loadUsers(); // Refresh the user list after adding a new user
+      this.name.set('');
+      this.email.set('');
+    });
+
+
+  }
+
 }

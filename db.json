@@ -1,22 +1,24 @@
 {
-  "users":[
+  "users": [
     {
-      "id": 1,
+      "id": "1",
       "name": "John Doe",
       "email": "john.doe@example.com",
       "isActive": true
     },
     {
-      "id": 2,
-      "name": "Jane Smith",
-      "email": "john.doe@example.com",
-      "isActive": true
+      "name": "papa john",
+      "email": "papajohn@gmail",
+      "isActive": false,
+      "id": "2nyU2oPJQ-Q"
     },
     {
-      "id": 3,
-      "name": "Alice Johnson",
-      "email": "john.doe@example.com",
-      "isActive": false
+      "name": "shahroz",
+      "email": "bshah",
+      "isActive": false,
+      "id": "hQ6z1WjzApo"
     }
-  ]
+    
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
