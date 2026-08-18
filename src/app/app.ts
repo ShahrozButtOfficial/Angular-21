@@ -1,12 +1,17 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('Angular-bootstrap');
+  
+  name = signal<string>('');
+  email = signal<string>('');
+
+  submitForm(){
+    alert(`Name: ${this.name()} \nEmail: ${this.email()} saved successfully!`);
+  }
 }
