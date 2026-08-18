@@ -1,12 +1,15 @@
 import { Routes } from '@angular/router';
-import { Productcomp } from './productcomp/productcomp'
-import { Products } from './products/products';
-
+import { Login } from './login/login';
+import { Dashboard } from './dashboard/dashboard';
+import { Product } from './product/product';
 
 
 export const routes: Routes = [
-   {path: 'product/:id', component: Productcomp},
-   {path: 'products', component: Products},
+    {path: 'login', component: Login},
+    {path: 'dashboard', component: Dashboard},
+    {path: 'product/:id', component: Product},
 
+
+    {path: '', redirectTo: 'login', pathMatch: 'full'},
      
 ];
