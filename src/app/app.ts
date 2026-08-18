@@ -1,28 +1,24 @@
-import { Component, signal } from '@angular/core';
-import { form , Field} from '@angular/forms/signals';
-import { CommonModule } from '@angular/common';
-
+import { Component, inject, signal } from '@angular/core';
+import { UserService } from './user';
 
 @Component({
   selector: 'app-root',
-  imports: [CommonModule,Field], 
-  templateUrl: './app.html',
-  styleUrl: './app.css'
-
+  templateUrl: './app.html'
 })
 export class App {
+  private userService = inject(UserService);
 
-  //form model base on signal
-  loginModel = signal({
-    email: '',
-    password: ''
-  });
+  users = signal<any[]>([]);
 
-  //create form from signal model
-  loginForm = form(this.loginModel);
-
-  submit(){
-    console.log(this.loginModel());
+  loadUsers() {
+    this.userService.getUsers().subscribe({
+      next: (data) => {
+        console.log('Data received:', data);
+        this.users.set(data);
+      },
+      error: (error) => {
+        console.error('Error:', error);
+      }
+    });
   }
-
 }
