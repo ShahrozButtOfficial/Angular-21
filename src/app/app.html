@@ -20,9 +20,11 @@
 <ul>
     @for (user of users(); track user.id) {
     <li>
-        {{ user.name }} - {{ user.email }} - {{user.isActive}}
+        {{ user.name }} - {{ user.email }} 
+        <strong> {{user.isActive ? 'Active':'Inactive'}}</strong>
     </li>
     <button (click)="editUser(user)">Edit User</button>
+    <button (click)="toggleUserStatus(user)">{{user.isActive ? 'Deactivate' : 'Activate'}}</button>
     }
 </ul>
 } @else {

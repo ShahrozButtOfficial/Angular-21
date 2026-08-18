@@ -86,6 +86,16 @@ export class App {
 
   }
 
+  toggleUserStatus(user: User) {
+    this.userService.updateUserStatus(user.id!, !user.isActive).subscribe(() => {
+      this.users.update( list => 
+        list.map(u=>
+          u.id === user.id ? { ...u, isActive: !u.isActive } : u
+        )
+      )
+    });
+  }
+
   afterSave() {
     this.loadUsers(); // Refresh the user list after adding a new user
     this.name.set('');

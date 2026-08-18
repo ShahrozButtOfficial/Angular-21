@@ -25,4 +25,9 @@ export class UserService {
     updateUser(id: number, user: User) : Observable<User> {
         return this.http.put<User>(`${this.apiUrl}/${id}`, user);
     }
+
+    //PATCH
+    updateUserStatus(id: number, isActive: boolean): Observable<User> {
+        return this.http.patch<User>(`${this.apiUrl}/${id}`, { isActive });
+    }
 }

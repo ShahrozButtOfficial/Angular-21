@@ -4,7 +4,7 @@
       "id": "1",
       "name": "John Doe",
       "email": "john.doe@example.com",
-      "isActive": true
+      "isActive": false
     },
     {
       "name": "papa johnny",
@@ -15,13 +15,13 @@
     {
       "name": "shahroz",
       "email": "bshah",
-      "isActive": false,
+      "isActive": true,
       "id": "hQ6z1WjzApo"
     },
     {
       "name": "allall",
       "email": "mlaa@gmail.com",
-      "isActive": false,
+      "isActive": true,
       "id": "jEfWFjyVJls"
     }
   ],
