@@ -3,17 +3,20 @@
     {
       "id": 1,
       "name": "John Doe",
-      "email": "john.doe@example.com"
+      "email": "john.doe@example.com",
+      "isActive": true
     },
     {
       "id": 2,
       "name": "Jane Smith",
-      "email": "john.doe@example.com"
+      "email": "john.doe@example.com",
+      "isActive": true
     },
     {
       "id": 3,
       "name": "Alice Johnson",
-      "email": "john.doe@example.com"
+      "email": "john.doe@example.com",
+      "isActive": false
     }
   ]
 }
