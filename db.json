@@ -17,12 +17,6 @@
       "email": "bshah",
       "isActive": true,
       "id": "hQ6z1WjzApo"
-    },
-    {
-      "name": "allall",
-      "email": "mlaa@gmail.com",
-      "isActive": true,
-      "id": "jEfWFjyVJls"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

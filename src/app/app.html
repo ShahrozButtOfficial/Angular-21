@@ -23,8 +23,9 @@
         {{ user.name }} - {{ user.email }} 
         <strong> {{user.isActive ? 'Active':'Inactive'}}</strong>
     </li>
-    <button (click)="editUser(user)">Edit User</button>
-    <button (click)="toggleUserStatus(user)">{{user.isActive ? 'Deactivate' : 'Activate'}}</button>
+    <button (click)="editUser(user)">Edit User</button> | 
+    <button (click)="toggleUserStatus(user)">{{user.isActive ? 'Deactivate' : 'Activate'}}</button> | 
+    <button (click)="deleteUser(user)">Delete</button>
     }
 </ul>
 } @else {

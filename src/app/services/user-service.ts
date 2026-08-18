@@ -11,23 +11,28 @@ export class UserService {
 
     constructor(private http: HttpClient) {}
 
-    //GET
+    //GET //R
     getUser(): Observable<User[]> {
         return this.http.get<User[]>(this.apiUrl);
     }
 
-    //POST
+    //POST //C
     addUser(user: User): Observable<User> {
         return this.http.post<User>(this.apiUrl, user);
     }
 
-    //PUT
+    //PUT //U
     updateUser(id: number, user: User) : Observable<User> {
         return this.http.put<User>(`${this.apiUrl}/${id}`, user);
     }
 
-    //PATCH
+    //PATCH //U
     updateUserStatus(id: number, isActive: boolean): Observable<User> {
         return this.http.patch<User>(`${this.apiUrl}/${id}`, { isActive });
+    }
+
+    //DELETE //D
+    deleteUser(id: number): Observable<void> {
+        return this.http.delete<void>(`${this.apiUrl}/${id}`);
     }
 }
