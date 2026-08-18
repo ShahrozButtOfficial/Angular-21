@@ -7,8 +7,8 @@
       "isActive": true
     },
     {
-      "name": "papa john",
-      "email": "papajohn@gmail",
+      "name": "papa johnny",
+      "email": "papajohny@gmail",
       "isActive": false,
       "id": "2nyU2oPJQ-Q"
     },
@@ -17,8 +17,13 @@
       "email": "bshah",
       "isActive": false,
       "id": "hQ6z1WjzApo"
+    },
+    {
+      "name": "allall",
+      "email": "mlaa@gmail.com",
+      "isActive": false,
+      "id": "jEfWFjyVJls"
     }
-    
   ],
   "$schema": "./node_modules/json-server/schema.json"
 }

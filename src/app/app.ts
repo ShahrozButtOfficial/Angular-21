@@ -35,7 +35,7 @@ export class App {
   users = signal<User[]>([]);
   name = signal<string>('');
   email = signal<string>('');
-
+  editingUpdateID = signal<number | null>(null);
 
 
   constructor(private userService: UserService) { }
@@ -57,21 +57,40 @@ export class App {
     });
   }
 
+  editUser(user: User) {
+    this.editingUpdateID.set(user.id!);
+    this.name.set(user.name);
+    this.email.set(user.email);
+  }
 
+
+  //Add and update user
   submitForm() {
-    const payload: User ={
+    const payload: User = {
       name: this.name(),
       email: this.email(),
       isActive: false
     };
+    //update user
+    if (this.editingUpdateID() !== null) {
+      this.userService.updateUser(this.editingUpdateID()!, payload).subscribe((data) => {
+        alert('User updated successfully');
+        this.afterSave();
+      })
+    } else {
+      this.userService.addUser(payload).subscribe((data) => {
+        this.loadUsers(); // Refresh the user list after adding a new user
+        this.afterSave();
+      });
+    }
 
-    this.userService.addUser(payload).subscribe((data) => {
-      this.loadUsers(); // Refresh the user list after adding a new user
-      this.name.set('');
-      this.email.set('');
-    });
+  }
 
-
+  afterSave() {
+    this.loadUsers(); // Refresh the user list after adding a new user
+    this.name.set('');
+    this.email.set('');
+    this.editingUpdateID.set(null)
   }
 
 }

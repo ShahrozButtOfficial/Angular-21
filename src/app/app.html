@@ -7,7 +7,9 @@
 
 <input type="email" placeholder="Email" [value]="email()" (input)="email.set($event.target.value)" />
 
-<button (click)="submitForm()">Add User</button>
+<button (click)="submitForm()">
+    {{editingUpdateID() ? 'Update User' : 'Add User'}}
+</button>
 
 <hr>
 
@@ -20,6 +22,7 @@
     <li>
         {{ user.name }} - {{ user.email }} - {{user.isActive}}
     </li>
+    <button (click)="editUser(user)">Edit User</button>
     }
 </ul>
 } @else {
